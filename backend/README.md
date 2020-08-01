@@ -49,36 +49,281 @@ debug = False
 
 ## API
 
-<!-- ### Using predict function
+# Backend API
 
-**Request** : `POST /predict`
+This document describes the backend API.
 
-**Body** : form-data (key: file, value: image file of format .png, .jpg, .jpeg)
+## Create/ Register user
+
+**Request** : `POST /api/user`
+
+**Body** :
+
+```json
+{
+  "id": String,
+  "name": String,
+  "email": String,
+  "password": String,
+  "register_date": Date
+}
+```
 
 ### Success response
 
 **Code** : `200`
 
-**Body** : html page with benign/malignment
+**Body** :
 
-### Error Response
+```json
+{
+  "id": String
+}
+```
+
+### Error response
 
 **Code** : `400`
 
-**Body** : Json
-```
+**Body** :
+
+```json
 {
-  "message": "No image selected for uploading"
+  "message": String
 }
 ```
 
-or
+## Delete user
 
+**Request** : `DELETE /api/user/delete-user/:id`
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{}
 ```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
 {
-  "message": "Incorrect image format selected for uploading"
+  "message": String
 }
-``` -->
+```
+
+## Get all users
+
+**Request** : `GET /api/user`
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+[
+  {
+   "id": String,
+    "name": String,
+    "email": String,
+    "password": String,
+    "register_date": Date,
+    "crawls":[{"ID":String}]
+  }
+]
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
+
+## Get user
+
+**Request** : `GET /api/user/:id`
+
+**Auth required** : Yes
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "id": String,
+  "name": String,
+  "email": String,
+  "password": String,
+  "register_date": Date,
+  "crawls":[{"ID":String}]
+},
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
+
+## Update user
+
+**Request** : `PUT /api/user/update-user/:id`
+
+**Body** :
+
+```json
+{
+  "id": String,
+  "name": String,
+  "email": String,
+  "password": String,
+  "register_date": Date,
+  "crawls":[{"ID":String}]
+}
+```
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "id": String
+}
+```
+
+
+## Create crawls
+
+**Request** : `POST /api/crawls`
+
+**Body** :
+
+```json
+{
+  "id": String,
+  "Query": String,
+  "Results":[{"url":string, "Score":number}],
+  "Run Date": Date
+}
+```
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "id": String
+}
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
+
+## Add Crawl ID to user
+
+**Request** : `PUT /api/user/update-user-crawls`
+
+**Body** :
+
+```json
+{
+  "crawls": "object id"
+}
+```
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "id": String
+}
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
+
+## Get template
+
+**Request** : `GET /api/crawls/:id`
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "id": String,
+  "Query": String,
+  "Results":[{"url":string, "Score":number}],
+  "Run Date": Date
+}
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
 
 <!-- ## License
 
