@@ -20,6 +20,7 @@ class MainCrawler(scrapy.Spider):
     soup = BeautifulSoup(page.text, 'lxml')
 
     def parse(self, response):
+        
         soup1 = BeautifulSoup(response.text, 'lxml')
         score = sim(self.soup, soup1)
         
