@@ -1,0 +1,31 @@
+import sys
+from flask import Flask
+from database.db import initialize_db
+from flask_restful import Api
+from resources.routes import initialize_routes
+
+# Define a flask app
+app = Flask(__name__)
+api = Api(app)
+#default config
+host = 'localhost'
+port = 5000
+debug = False
+
+# CLI arguments of custom config
+try:
+    host = sys.argv[1]
+    port = sys.argv[2]
+    debug = sys.argv[3]
+except:
+    pass
+
+DB_URI = "mongodb+srv://<username>:<password>@<database-name>.mongodb.net/test?retryWrites=true&w=majority"
+
+app.config["MONGODB_HOST"] = DB_URI
+
+initialize_db(app)
+initialize_routes(api)
+
+if __name__ == "__main__":
+    app.run(host, port, debug)

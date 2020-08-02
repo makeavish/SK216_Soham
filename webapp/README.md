@@ -21,6 +21,7 @@ Create a [virtual env](https://docs.python.org/3/tutorial/venv.html) or [conda e
 - Werkzeug>=1.0.1
 - MarkupSafe>=1.1.1
 - Jinja2>=2.11.2
+- flask-mongoengine>=0.9.5
 
 ## How To Use
 
