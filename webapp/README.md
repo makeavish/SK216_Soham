@@ -60,7 +60,7 @@ This document describes the backend API.
 
 ## Create/ Register user
 
-**Request** : `POST /api/user`
+**Request** : `POST /api/auth/signup`
 
 **Body** :
 
@@ -98,6 +98,50 @@ This document describes the backend API.
 }
 ```
 
+## API
+
+# Backend API
+
+This document describes the backend API.
+
+## Login user
+
+**Request** : `POST /api/auth/login`
+
+**Body** :
+
+```json
+{
+  "email": String,
+  "password": String
+}
+```
+
+### Success response
+
+**Code** : `200`
+
+**Body** :
+
+```json
+{
+  "token": String
+}
+```
+
+### Error response
+
+**Code** : `400`
+
+**Body** :
+
+```json
+{
+  "message": String
+}
+```
+
+<!-- 
 ## Delete user
 
 **Request** : `DELETE /api/user/delete-user/:id`
@@ -122,8 +166,8 @@ This document describes the backend API.
 {
   "message": String
 }
-```
-
+``` -->
+<!-- 
 ## Get all users
 
 **Request** : `GET /api/user`
@@ -157,7 +201,7 @@ This document describes the backend API.
 {
   "message": String
 }
-```
+``` -->
 
 ## Get user
 
@@ -193,7 +237,7 @@ This document describes the backend API.
   "message": String
 }
 ```
-
+<!-- 
 ## Update user
 
 **Request** : `PUT /api/user/update-user/:id`
@@ -221,7 +265,7 @@ This document describes the backend API.
 {
   "id": String
 }
-```
+``` -->
 
 
 ## Create crawls
@@ -299,7 +343,7 @@ This document describes the backend API.
 }
 ```
 
-## Get template
+## Get crawl
 
 **Request** : `GET /api/crawls/:id`
 

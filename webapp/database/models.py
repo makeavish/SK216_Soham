@@ -15,6 +15,7 @@ class Crawl(db.Document):
 class User(db.Document):
     name = db.StringField()
     email = db.StringField()
+    password = db.StringField()
     registerDate = db.DateTimeField(default=datetime.datetime.utcnow)
     crawls = db.ListField(db.ReferenceField(Crawl))
     def hash_password(self):
