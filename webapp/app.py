@@ -3,6 +3,7 @@ from flask import Flask
 from database.db import initialize_db
 from flask_restful import Api
 from resources.routes import initialize_routes
+from flask_bcrypt import Bcrypt
 
 # Define a flask app
 app = Flask(__name__)
@@ -26,6 +27,7 @@ app.config["MONGODB_HOST"] = DB_URI
 
 initialize_db(app)
 initialize_routes(api)
+bcrypt = Bcrypt(app)
 
 if __name__ == "__main__":
     app.run(host, port, debug)

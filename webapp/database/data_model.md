@@ -13,8 +13,8 @@ A user
   "id": String,
   "name": String,
   "password": String,
-  "register_date": Date,
-  "crawls":[{"Crawl ID":String}]
+  "registerDate": Date,
+  "crawls":[{"Crawl ID":Object ID}]
 }
 ```
 
@@ -25,8 +25,20 @@ A user
 ```json
 {
   "id": String,
-  "Query": String,
-  "Results":[{"url":string, "Score":number}],
-  "Run Date": Date
+  "query": String,
+  "results":[{"Results ID":Object ID}],
+  "runDate": Date
+}
+```
+
+## Results
+
+**results** :
+
+```json
+{
+  "url": String,
+  "title": String,
+  "score": String
 }
 ```

@@ -24,6 +24,8 @@ Create a [virtual env](https://docs.python.org/3/tutorial/venv.html) or [conda e
 - flask-mongoengine>=0.9.5
 - dnspython-2.0.0
 - flask-restful-0.3.8
+- flask-bcrypt-0.7.1
+- flask-jwt-extended==3.24.1
 
 ## How To Use
 
