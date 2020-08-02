@@ -39,6 +39,8 @@ A user
 {
   "url": String,
   "title": String,
+  "text":String,
+  "imageUrl":String,
   "score": String
 }
 ```
