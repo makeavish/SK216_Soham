@@ -1,3 +1,5 @@
+# ignore cache
+__pycache__/
 # ignore all logs
 *.log
 
