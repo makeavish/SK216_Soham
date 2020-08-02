@@ -22,6 +22,8 @@ Create a [virtual env](https://docs.python.org/3/tutorial/venv.html) or [conda e
 - MarkupSafe>=1.1.1
 - Jinja2>=2.11.2
 - flask-mongoengine>=0.9.5
+- dnspython-2.0.0
+- flask-restful-0.3.8
 
 ## How To Use
 

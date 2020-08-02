@@ -20,7 +20,7 @@ try:
 except:
     pass
 
-DB_URI = "mongodb+srv://<username>:<password>@<database-name>.mongodb.net/test?retryWrites=true&w=majority"
+DB_URI = "mongodb+srv://soham:sohamSIH@cluster0.ywiiw.gcp.mongodb.net/care?retryWrites=true&w=majority"
 
 app.config["MONGODB_HOST"] = DB_URI
 
