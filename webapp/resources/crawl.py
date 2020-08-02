@@ -5,7 +5,6 @@ from flask_jwt_extended import jwt_required
 
 from mongoengine.errors import FieldDoesNotExist, \
 NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
-
 from resources.errors import SchemaValidationError, CrawlAlreadyExistsError, \
 InternalServerError, UpdatingCrawlError, DeletingCrawlError, CrawlNotExistsError
 

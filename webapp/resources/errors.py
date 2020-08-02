@@ -16,6 +16,18 @@ class DeletingCrawlError(Exception):
 class CrawlNotExistsError(Exception):
     pass
 
+class ResultAlreadyExistsError(Exception):
+    pass
+
+class UpdatingResultError(Exception):
+    pass
+
+class DeletingResultError(Exception):
+    pass
+
+class ResultNotExistsError(Exception):
+    pass
+
 class EmailAlreadyExistsError(Exception):
     pass
 
@@ -45,6 +57,22 @@ errors = {
      },
      "CrawlNotExistsError": {
          "message": "Crawl with given id doesn't exists",
+         "status": 400
+     },
+     "ResultAlreadyExistsError": {
+         "message": "Result with given name already exists",
+         "status": 400
+     },
+     "UpdatingResultError": {
+         "message": "Updating Result added by other is forbidden",
+         "status": 403
+     },
+     "DeletingResultError": {
+         "message": "Deleting Result added by other is forbidden",
+         "status": 403
+     },
+     "ResultNotExistsError": {
+         "message": "Result with given id doesn't exists",
          "status": 400
      },
      "EmailAlreadyExistsError": {
