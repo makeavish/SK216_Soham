@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+:root {
+    --accent-text-color: rgb(235, 240, 234);
+    --accent-theme-color: rgb(221, 172, 46);
+
+
+    --brand-logo-style: 'Varela Round', sans-serif;
+    --item-style: 'Oxygen', sans-serif;
+}
+
+/**** start of navbar ****/
+
+.brand-logo{
+  padding-left: 8% !important;
+  font-family: var(--brand-logo-style);
+}
+
+#nav-original{
+  padding-right: 8% !important;
+  font-family: var(--item-style);
+}
+
+.material-icons{
+  font-size: 40px !important;
+  color: var(--accent-text-color) ;
+}
+
+/**** end of navbar ****/
+
+
+/**** home screen ****/
+.body{
+  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+}
+
+.background-image{
+  background-image: url("https://www.tarent.de/wp-content/uploads/iot_service_fb.jpg");
+  height: 590px;
+  opacity: 0.3;
+  position: relative;
+}
+
+.content{
+  position: absolute;
+  top: 33%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.brand-header{
+  color: var(--accent-text-color);
+  font-family: var(--item-style);
+}
+
+.input-field{
+  transform: translate(0%, 100%);
+}
+
+ .input-field .prefix.active, input[type=text]:not(.browser-default):focus:not([readonly])+label {
+  color: var(--accent-theme-color);
+ }
+
+.input-field input[type=text], .input-field input[type=text]:focus {
+  color: var(--accent-text-color);
+  border-bottom: 1px solid var(--accent-theme-color)   !important;
+  box-shadow: 0 1px 0 0 var(--accent-theme-color)   !important;
+}
+
+.btn, .btn:focus{
+  transform: translate(15%, 260%);
+  border-radius: 2%;
+  background-color: var(--accent-theme-color);
+  width: 40%;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: rgb(240, 212, 56);
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px){
+  #nav-original{
+    display: none;
+  }
+}
+
+@media (min-width: 601px){
+  #nav-mobile{
+    display: none;
+  }
+}
