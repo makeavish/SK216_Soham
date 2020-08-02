@@ -12,6 +12,25 @@ BOT_NAME = 'MainCrawler'
 SPIDER_MODULES = ['MainCrawler.spiders']
 NEWSPIDER_MODULE = 'MainCrawler.spiders'
 
+#Recomended priority queue for Braod crawling
+SCHEDULER_PRIORITY_QUEUE = 'scrapy.pqueues.DownloaderAwarePriorityQueue'
+
+LOG_LEVEL = 'INFO'
+
+RETRY_ENABLED = False
+
+DOWNLOAD_TIMEOUT = 15
+
+REDIRECT_ENABLED = False
+
+AJAXCRAWL_ENABLED = True
+
+DOWNLOAD_FAIL_ON_DATALOSS = False
+
+#for crawling in BFO
+# DEPTH_PRIORITY = 1
+# SCHEDULER_DISK_QUEUE = 'scrapy.squeues.PickleFifoDiskQueue'
+# SCHEDULER_MEMORY_QUEUE = 'scrapy.squeues.FifoMemoryQueue'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'MainCrawler (+http://www.yourdomain.com)'
@@ -20,18 +39,18 @@ NEWSPIDER_MODULE = 'MainCrawler.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+# CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
