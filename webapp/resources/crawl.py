@@ -16,7 +16,7 @@ class CrawlsApi(Resource):
         id = crawl.id
         return {'id': str(id)}, 200
         
-class CrawlApi(Resource):
+class CrawlsApiID(Resource):
 
     @jwt_required
     def put(self, id):
