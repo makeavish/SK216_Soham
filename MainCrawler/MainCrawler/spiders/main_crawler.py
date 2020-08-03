@@ -44,10 +44,12 @@ class MainCrawler(scrapy.Spider):
 
         item = MaincrawlerItem()
 
-        string text_to_string = ""
+        text_to_string = ""
 
         for s in text:
-            text_to_string+=s+" "
+            res = ''.join([i for i in s if not i.isdigit()]) 
+            if len(res)>1:
+                text_to_string+=res+" "
 
 
         item['url'] = response.url
