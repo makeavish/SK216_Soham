@@ -784,3 +784,143 @@ Traceback (most recent call last):
     raise ValueError('Missing scheme in request url: %s' % self._url)
 ValueError: Missing scheme in request url: javascript:print();
 2020-08-03 12:07:13 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2020-08-03 12:50:10 [scrapy.utils.log] INFO: Scrapy 2.2.1 started (bot: MainCrawler)
+2020-08-03 12:50:10 [scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.7 (default, Apr 20 2020, 05:55:00) - [GCC 5.4.0 20160609], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 3.0, Platform Linux-5.4.0-42-generic-x86_64-with-debian-bullseye-sid
+2020-08-03 12:50:10 [scrapy.crawler] INFO: Overridden settings:
+{'AJAXCRAWL_ENABLED': True,
+ 'BOT_NAME': 'MainCrawler',
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 5,
+ 'DOWNLOAD_FAIL_ON_DATALOSS': False,
+ 'DOWNLOAD_TIMEOUT': 15,
+ 'LOG_FILE': 'log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'MainCrawler.spiders',
+ 'REDIRECT_ENABLED': False,
+ 'RETRY_ENABLED': False,
+ 'ROBOTSTXT_OBEY': True,
+ 'SCHEDULER_PRIORITY_QUEUE': 'scrapy.pqueues.DownloaderAwarePriorityQueue',
+ 'SPIDER_MODULES': ['MainCrawler.spiders']}
+2020-08-03 12:50:10 [scrapy.extensions.telnet] INFO: Telnet Password: 4d2becd630db0102
+2020-08-03 12:50:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-08-03 12:50:10 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-08-03 12:50:10 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-08-03 12:50:10 [twisted] CRITICAL: Unhandled error in Deferred:
+2020-08-03 12:50:10 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/crawler.py", line 87, in crawl
+    self.engine = self._create_engine()
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/crawler.py", line 101, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/core/engine.py", line 70, in __init__
+    self.scraper = Scraper(crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/core/scraper.py", line 71, in __init__
+    self.itemproc = itemproc_cls.from_crawler(crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/middleware.py", line 34, in from_settings
+    mwcls = load_object(clspath)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/utils/misc.py", line 50, in load_object
+    mod = import_module(module)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/piyush/SK216_Soham/MainCrawler/MainCrawler/pipelines.py", line 16, in <module>
+    import pymongo
+ModuleNotFoundError: No module named 'pymongo'
+2020-08-03 12:51:11 [scrapy.utils.log] INFO: Scrapy 2.2.1 started (bot: MainCrawler)
+2020-08-03 12:51:11 [scrapy.utils.log] INFO: Versions: lxml 4.5.2.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.7 (default, Apr 20 2020, 05:55:00) - [GCC 5.4.0 20160609], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 3.0, Platform Linux-5.4.0-42-generic-x86_64-with-debian-bullseye-sid
+2020-08-03 12:51:11 [scrapy.crawler] INFO: Overridden settings:
+{'AJAXCRAWL_ENABLED': True,
+ 'BOT_NAME': 'MainCrawler',
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 5,
+ 'DOWNLOAD_FAIL_ON_DATALOSS': False,
+ 'DOWNLOAD_TIMEOUT': 15,
+ 'LOG_FILE': 'log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'MainCrawler.spiders',
+ 'REDIRECT_ENABLED': False,
+ 'RETRY_ENABLED': False,
+ 'ROBOTSTXT_OBEY': True,
+ 'SCHEDULER_PRIORITY_QUEUE': 'scrapy.pqueues.DownloaderAwarePriorityQueue',
+ 'SPIDER_MODULES': ['MainCrawler.spiders']}
+2020-08-03 12:51:11 [scrapy.extensions.telnet] INFO: Telnet Password: 5a94c684f5cf99af
+2020-08-03 12:51:11 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-08-03 12:51:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-08-03 12:51:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-08-03 12:51:11 [twisted] CRITICAL: Unhandled error in Deferred:
+2020-08-03 12:51:11 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/twisted/internet/defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/crawler.py", line 87, in crawl
+    self.engine = self._create_engine()
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/crawler.py", line 101, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/core/engine.py", line 70, in __init__
+    self.scraper = Scraper(crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/core/scraper.py", line 71, in __init__
+    self.itemproc = itemproc_cls.from_crawler(crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/middleware.py", line 34, in from_settings
+    mwcls = load_object(clspath)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/site-packages/scrapy/utils/misc.py", line 50, in load_object
+    mod = import_module(module)
+  File "/home/linuxbrew/.linuxbrew/opt/python/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/piyush/SK216_Soham/MainCrawler/MainCrawler/pipelines.py", line 16, in <module>
+    import pymongo
+ModuleNotFoundError: No module named 'pymongo'

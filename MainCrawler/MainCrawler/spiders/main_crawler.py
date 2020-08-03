@@ -10,18 +10,20 @@ import re
 
 class MainCrawler(scrapy.Spider):
     name = "main_crawler"
-    start_urls = ["https://en.wikipedia.org/wiki/Cricket"]
+    start_urls = []#"https://en.wikipedia.org/wiki/Cricket"]
     
 
-    # def __init__(self, *args, **kwargs): 
-    #   super(MainCrawler, self).__init__(*args, **kwargs) 
-    #   self.start_urls = [kwargs.get('start_url')] 
+    def __init__(self, *args, **kwargs): 
+      super(MainCrawler, self).__init__(*args, **kwargs) 
+      if 'start_urls' in kwargs:
+            self.start_urls = kwargs.pop('start_urls').split(',')
 
-    page = requests.get(start_urls[0])
-    soup = BeautifulSoup(page.text, 'lxml')
+    # page = requests.get(start_urls[0])
+    # soup = BeautifulSoup(page.text, 'lxml')
 
     def parse(self, response):
-        
+        page = requests.get(start_urls[0])
+        soup = BeautifulSoup(page.text, 'lxml')
         soup1 = BeautifulSoup(response.text, 'lxml')
         tokenizer = RegexpTokenizer(r'\w+')
         for script in soup1(["script", "style"]):
