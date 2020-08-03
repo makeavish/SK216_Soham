@@ -22,12 +22,35 @@ class MainCrawler(scrapy.Spider):
     def parse(self, response):
         
         soup1 = BeautifulSoup(response.text, 'lxml')
+        tokenizer = RegexpTokenizer(r'\w+')
+        for script in soup(["script", "style"]):
+            script.decompose()    # rip it out
+        s = soup.get_text().strip()
+        # print(s)
+        # .encode('utf-8')
+        #s='hello there there this is this hello'
+        # s1=set()
+
+        text = tokenizer.tokenize(s)
+        text.sort()
+
+        score = sim(self.soup, soup1)
+
+        images = []
+        
+        for img in soup.find_all('img'):
+            images.append(img.get('src'))
+
+        item = MaincrawlerItem()
+
+        item['url'] = response.url
+        item['title'] = soup1.find_all('a')
+        item['text'] = text
+        item['images'] = images
+
         score = sim(self.soup, soup1)
         
-        yield {
-            'url':response.url,
-            'title':soup1.h1.string,
-        }
+        yield item
 
         for links in soup1.find_all('a'):
             link = links.get('href')
