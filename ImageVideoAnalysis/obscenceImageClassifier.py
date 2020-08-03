@@ -167,10 +167,9 @@ history = model.fit_generator(
 model = load_model("Final_weights.h5")
 
 import coremltools
-model.author = "Lakshay Chhabra"
 model.short_description = "NSFW Image Classifier"
 
-output_labels = ['Neutral', 'Porn', 'Sexy']
+output_labels = ['Neutral', 'Porn', 'NSFW']
 ios = coremltools.converters.keras.convert(model, input_names=['image'], output_names=['output'], 
                                                    class_labels=output_labels, image_input_names='image', image_scale=1/255.0)
 
@@ -178,7 +177,7 @@ ios.save('NSFW.mlmodel')
 
 
 
-test_file = test_path+"/sexy/ffc15b09-10a0-4753-9adf-d38eb53cf8a1.jpg"
+test_file = test_path+"/NSFW/ffc15b09-10a0-4753-9adf-d38eb53cf8a1.jpg"
 
 # https://stackoverflow.com/a/53403805/7437264
 from PIL import Image
