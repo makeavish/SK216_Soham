@@ -44,9 +44,15 @@ class MainCrawler(scrapy.Spider):
 
         item = MaincrawlerItem()
 
+        string text_to_string = ""
+
+        for s in text:
+            text_to_string+=s+" "
+
+
         item['url'] = response.url
         item['title'] = soup1.h1.string
-        item['text'] = text
+        item['text'] = text_to_string
         item['imageUrl'] = images
 
         score = sim(self.soup, soup1)
