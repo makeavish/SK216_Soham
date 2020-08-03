@@ -21,8 +21,7 @@ def start_crawl(urls):
         command+="\'"+url+"\',"
     os.system(command)
 
-def get_started(query):
-    urls = find(query, 3)
-    start_crawl(urls)
 
-
+query=sys.argv[1]
+urls = find(query, 1)
+start_crawl(urls)
