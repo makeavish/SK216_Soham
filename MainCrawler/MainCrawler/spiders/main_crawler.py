@@ -3,6 +3,7 @@ import scrapy
 import requests
 from nltk.tokenize import RegexpTokenizer
 from collections import OrderedDict
+from MainCrawler.items import MaincrawlerItem
 # from similarity import sim
 import math 
 import re
@@ -23,9 +24,9 @@ class MainCrawler(scrapy.Spider):
         
         soup1 = BeautifulSoup(response.text, 'lxml')
         tokenizer = RegexpTokenizer(r'\w+')
-        for script in soup(["script", "style"]):
+        for script in soup1(["script", "style"]):
             script.decompose()    # rip it out
-        s = soup.get_text().strip()
+        s = soup1.get_text().strip()
         # print(s)
         # .encode('utf-8')
         #s='hello there there this is this hello'
@@ -38,15 +39,15 @@ class MainCrawler(scrapy.Spider):
 
         images = []
         
-        for img in soup.find_all('img'):
+        for img in soup1.find_all('img'):
             images.append(img.get('src'))
 
         item = MaincrawlerItem()
 
         item['url'] = response.url
-        item['title'] = soup1.find_all('a')
+        item['title'] = soup1.h1.string
         item['text'] = text
-        item['images'] = images
+        item['imageUrl'] = images
 
         score = sim(self.soup, soup1)
         

@@ -15,6 +15,8 @@ NEWSPIDER_MODULE = 'MainCrawler.spiders'
 #Recomended priority queue for Braod crawling
 SCHEDULER_PRIORITY_QUEUE = 'scrapy.pqueues.DownloaderAwarePriorityQueue'
 
+LOG_FILE = 'log.txt'
+
 LOG_LEVEL = 'INFO'
 
 RETRY_ENABLED = False
@@ -84,8 +86,8 @@ COOKIES_ENABLED = False
 ITEM_PIPELINES = {
    'MainCrawler.pipelines.MaincrawlerPipeline': 300,
 }
-MONGO_URI = 'mongodb://localhost:27017'
-MONGO_DATABASE = 'sivji-sandbox'
+MONGO_URI = 'mongodb+srv://soham:sohamSIH@cluster0.ywiiw.gcp.mongodb.net/care?retryWrites=true&w=majority'
+MONGO_DATABASE = 'care'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
